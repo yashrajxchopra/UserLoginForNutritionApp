@@ -1,3 +1,4 @@
+window.fetchedData = {};
 document.getElementById('login').addEventListener('click',(e) =>{
     e.preventDefault()
     const id = document.getElementById("email").value
@@ -10,10 +11,15 @@ document.getElementById('login').addEventListener('click',(e) =>{
         if(xhr.readyState == 4 && xhr.status == 200) {
             console.log(xhr.responseText)
             const userDetail = JSON.parse(xhr.responseText)
-            window.myObject = userDetail
+            console.log(userDetail)   
+            localStorage.setItem("Name", userDetail.name)
+            localStorage.setItem("Email", userDetail.email)
+            localStorage.setItem("Phone", userDetail.phoneno)
+            localStorage.setItem("DOB", userDetail.dob)
+            localStorage.setItem("Gender", userDetail.gender)
             if(pwd==userDetail.pwd)
             {
-                window.location.replace("./index.html");
+                window.location.href= "index.html"
             }
         }
         else{
