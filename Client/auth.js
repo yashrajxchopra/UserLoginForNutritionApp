@@ -3,7 +3,7 @@ document.getElementById('login').addEventListener('click',(e) =>{
     e.preventDefault()
     const id = document.getElementById("email").value
     const pwd = document.getElementById("password").value
-    const url = `http://localhost:8081/student/${id}`
+    const url = `http://localhost:8081/user/${id}`
     const xhr = new XMLHttpRequest()
     xhr.open('GET', url)
     xhr.setRequestHeader('Access-Control-Allow-Origin', '*')

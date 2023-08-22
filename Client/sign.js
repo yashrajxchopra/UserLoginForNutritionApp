@@ -36,7 +36,7 @@
    console.log(user)
   
     const xhr = new XMLHttpRequest()
-    xhr.open('POST', 'http://localhost:8081/students')
+    xhr.open('POST', 'http://localhost:8081/users')
     xhr.setRequestHeader("Content-Type", "application/json")
     xhr.onreadystatechange = () => {
         if(xhr.readyState == 4 && xhr.status == 200) {
