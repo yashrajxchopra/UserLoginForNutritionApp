@@ -1,4 +1,3 @@
-window.fetchedData = {};
 document.getElementById('login').addEventListener('click',(e) =>{
     e.preventDefault()
     const id = document.getElementById("email").value
