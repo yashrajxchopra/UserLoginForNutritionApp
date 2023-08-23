@@ -17,7 +17,7 @@ public class UserController {
 
 
     @RequestMapping(method = RequestMethod.GET,value = "/users")
-    public List<User> getAllStudents()
+    public List<User> getAllUsers()
     {
         return userServices.getAllUsers();
     }
@@ -27,7 +27,7 @@ public class UserController {
 //GET
 
     @RequestMapping(method = RequestMethod.GET,value = "/user/{email}")
-    public Optional<User> stuInfo(@PathVariable String email)
+    public Optional<User> userInfo(@PathVariable String email)
     {
         return userServices.getUserInfo(email);
 
@@ -38,7 +38,7 @@ public class UserController {
 //POST
 
     @RequestMapping(method =RequestMethod.POST,value = "/users")
-    public User addStudent(@RequestBody User stu)
+    public User addUser(@RequestBody User stu)
     {
         userServices.addUser(stu);
         return stu;
@@ -48,7 +48,7 @@ public class UserController {
 
 //    PUT
     @RequestMapping(method = RequestMethod.PUT,value = "/user/{email}")
-    public Optional<User> editStudent(@PathVariable String email, @RequestBody User user)
+    public Optional<User> editUser(@PathVariable String email, @RequestBody User user)
     {
         return userServices.editUser(email, user);
 
@@ -59,7 +59,7 @@ public class UserController {
 //    Delete
 
     @RequestMapping(method = RequestMethod.DELETE,value = "/user/{email}")
-    public Optional<User> deleteStudent(@PathVariable String email)
+    public Optional<User> deleteUser(@PathVariable String email)
     {
         return userServices.deleteUser(email);
 
